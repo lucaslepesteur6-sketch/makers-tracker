@@ -1,64 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>MAKE.R.S. — Tracker</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M.A.K.E.R.S.</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">MAKE.R.S.</div>
-      <div id="authArea">
-        <button id="signinBtn">Se connecter (Google)</button>
-        <button id="signoutBtn" style="display:none">Se déconnecter</button>
-      </div>
-    </header>
+  <header>
+    <h1>M.A.K.E.R.S.</h1>
+    <nav>
+      <button class="tab-btn" data-tab="tracker">Tracker</button>
+      <button class="tab-btn" data-tab="how">Comment ça marche</button>
+      <button class="tab-btn" data-tab="about">À propos</button>
+    </nav>
+    <div id="auth">
+      <button id="signinBtn">Se connecter</button>
+      <button id="signoutBtn">Se déconnecter</button>
+    </div>
+  </header>
 
-    <main>
-      <section id="profileCard" class="card" style="display:none">
+  <aside id="sidebar">
+    <div class="domain-icon" data-domain="M">M</div>
+    <div class="domain-icon" data-domain="A">A</div>
+    <div class="domain-icon" data-domain="K">K</div>
+    <div class="domain-icon" data-domain="E">E</div>
+    <div class="domain-icon" data-domain="R">R</div>
+    <div class="domain-icon" data-domain="S">S</div>
+  </aside>
+
+  <main>
+    <!-- TRACKER -->
+    <section id="tracker" class="tab-content">
+      <div id="profileCard" style="display:none">
         <div id="userInfo"></div>
-        <div id="summary"></div>
-      </section>
+      </div>
+      <div id="summary"></div>
+      <div id="domainsList"></div>
 
-      <section class="card">
-        <h3>Domaines</h3>
-        <div id="domainsList"></div>
-        <div class="row">
-          <input id="newDomainName" placeholder="Ajouter domaine (ex: Motion)" />
-          <button id="addDomainBtn">Ajouter</button>
-        </div>
-      </section>
-
-      <section class="card">
-        <h3>Quêtes</h3>
+      <div id="questsContainer">
+        <h2>Quêtes</h2>
         <div id="quests"></div>
-        <div class="row">
-          <input id="questName" placeholder="Nom quête" />
-          <input id="questXP" placeholder="XP" />
-          <select id="questDomain"></select>
-          <button id="addQuest">Ajouter quête</button>
+      </div>
+
+      <div id="addDomainSection">
+        <input type="text" id="newDomainName" placeholder="Nom du domaine">
+        <button id="addDomainBtn">Ajouter domaine</button>
+      </div>
+
+      <div id="addQuestSection">
+        <input type="text" id="questName" placeholder="Nom de la quête">
+        <input type="number" id="questXP" placeholder="XP">
+        <select id="questDomain"></select>
+        <button id="addQuest">Ajouter quête</button>
+      </div>
+
+      <div id="exportSection">
+        <button id="exportBtn">Exporter mes données</button>
+        <input type="file" id="fileInput">
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section id="how" class="tab-content" style="display:none;">
+      <h2>Comment ça marche</h2>
+      <div class="steps">
+        <div class="step">
+          <h3>1. Connectez-vous</h3>
+          <p>Utilisez Google pour sauvegarder votre progression.</p>
         </div>
-      </section>
-
-      <section class="card">
-        <h3>Exporter / Importer</h3>
-        <div class="row">
-          <button id="exportBtn">Exporter JSON</button>
-          <input type="file" id="fileInput" accept="application/json" />
+        <div class="step">
+          <h3>2. Ajoutez des domaines</h3>
+          <p>Chaque lettre du M.A.K.E.R.S. représente un domaine.</p>
         </div>
-      </section>
-    </main>
+        <div class="step">
+          <h3>3. Créez des quêtes</h3>
+          <p>Gagnez de l'XP et montez de niveau.</p>
+        </div>
+        <div class="step">
+          <h3>4. Suivez votre progression</h3>
+          <p>Jauges et niveaux s'actualisent en temps réel.</p>
+        </div>
+      </div>
+    </section>
 
-    <footer>
-      <small>Accessible partout. Déploie et colle le lien dans Discord.</small>
-    </footer>
-  </div>
+    <!-- ABOUT -->
+    <section id="about" class="tab-content" style="display:none;">
+      <h2>À propos</h2>
+      <p>Créé par Benoît, inspiré de Fallout SPECIAL.</p>
+    </section>
+  </main>
 
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
-  <script src="/app.js"></script>
+  <script type="module" src="app.js"></script>
 </body>
-</html
+</html>
