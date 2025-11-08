@@ -1,0 +1,15 @@
+:root{
+  --bg:#081023; --card:#0d1726; --accent:#7c3aed; --muted:#9fb0c8; --txt:#e6eef8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(180deg,var(--bg),#041021);color:var(--txt);padding:18px}
+.container{max-width:980px;margin:0 auto}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.brand{font-size:20px;font-weight:700;color:var(--accent)}
+.card{background:linear-gradient(180deg,var(--card),rgba(10,15,22,0.6));padding:14px;border-radius:10px;margin-bottom:12px;box-shadow:0 8px 24px rgba(2,6,23,0.6)}
+.row{display:flex;gap:8px;margin-top:8px}
+input,select,button{padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--txt)}
+button.primary{background:linear-gradient(90deg,var(--accent),#5b21b6);border:0}
+#domainsList .domain{display:flex;align-items:center;justify-content:space-between;padding:8px;background:rgba(255,255,255,0.02);border-radius:8px;margin-top:8px}
+#quests .quest{display:flex;justify-content:space-between;padding:8px;background:rgba(255,255,255,0.02);border-radius:8px;margin-top:8px}
+footer{margin-top:12px;color:var(--muted)}

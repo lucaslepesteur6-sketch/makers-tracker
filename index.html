@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MAKE.R.S. — Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">MAKE.R.S.</div>
+      <div id="authArea">
+        <button id="signinBtn">Se connecter (Google)</button>
+        <button id="signoutBtn" style="display:none">Se déconnecter</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="profileCard" class="card" style="display:none">
+        <div id="userInfo"></div>
+        <div id="summary"></div>
+      </section>
+
+      <section class="card">
+        <h3>Domaines</h3>
+        <div id="domainsList"></div>
+        <div class="row">
+          <input id="newDomainName" placeholder="Ajouter domaine (ex: Motion)" />
+          <button id="addDomainBtn">Ajouter</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Quêtes</h3>
+        <div id="quests"></div>
+        <div class="row">
+          <input id="questName" placeholder="Nom quête" />
+          <input id="questXP" placeholder="XP" />
+          <select id="questDomain"></select>
+          <button id="addQuest">Ajouter quête</button>
+        </div>
+      </section>
+
+      <section class="card">
+        <h3>Exporter / Importer</h3>
+        <div class="row">
+          <button id="exportBtn">Exporter JSON</button>
+          <input type="file" id="fileInput" accept="application/json" />
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <small>Accessible partout. Déploie et colle le lien dans Discord.</small>
+    </footer>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.24.0/firebase-firestore-compat.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html
