@@ -1,96 +1,67 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>M.A.K.E.R.S.</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MAKERS — Accueil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>M.A.K.E.R.S.</h1>
-    <nav>
-      <button class="tab-btn" data-tab="tracker">Tracker</button>
-      <button class="tab-btn" data-tab="how">Comment ça marche</button>
-      <button class="tab-btn" data-tab="about">À propos</button>
-    </nav>
-    <div id="auth">
-      <button id="signinBtn">Se connecter</button>
-      <button id="signoutBtn">Se déconnecter</button>
-    </div>
-  </header>
-
-  <aside id="sidebar">
-    <div class="domain-icon" data-domain="M">M</div>
-    <div class="domain-icon" data-domain="A">A</div>
-    <div class="domain-icon" data-domain="K">K</div>
-    <div class="domain-icon" data-domain="E">E</div>
-    <div class="domain-icon" data-domain="R">R</div>
-    <div class="domain-icon" data-domain="S">S</div>
-  </aside>
-
-  <main>
-    <!-- TRACKER -->
-    <section id="tracker" class="tab-content">
-      <div id="profileCard" style="display:none">
-        <div id="userInfo"></div>
+  <div id="app">
+    <!-- common header / nav -->
+    <header class="site-header">
+      <div class="brand">
+        <div class="pip-title">M.A.K.E.R.S</div>
+        <div class="pip-sub">Inspiré de Fallout — méthode d'apprentissage</div>
       </div>
-      <div id="summary"></div>
-      <div id="domainsList"></div>
+      <nav class="site-nav">
+        <a href="index.html" class="nav-link">Accueil</a>
+        <a href="makers.html" class="nav-link">Makers</a>
+        <a href="howto.html" class="nav-link">Comment ça marche</a>
+        <a href="about.html" class="nav-link">À propos</a>
+        <a href="login.html" class="nav-link auth-link" id="nav-auth-link">Se connecter</a>
+      </nav>
+    </header>
 
-      <div id="questsContainer">
-        <h2>Quêtes</h2>
-        <div id="quests"></div>
-      </div>
-
-      <div id="addDomainSection">
-        <input type="text" id="newDomainName" placeholder="Nom du domaine">
-        <button id="addDomainBtn">Ajouter domaine</button>
-      </div>
-
-      <div id="addQuestSection">
-        <input type="text" id="questName" placeholder="Nom de la quête">
-        <input type="number" id="questXP" placeholder="XP">
-        <select id="questDomain"></select>
-        <button id="addQuest">Ajouter quête</button>
-      </div>
-
-      <div id="exportSection">
-        <button id="exportBtn">Exporter mes données</button>
-        <input type="file" id="fileInput">
-      </div>
-    </section>
-
-    <!-- COMMENT ÇA MARCHE -->
-    <section id="how" class="tab-content" style="display:none;">
-      <h2>Comment ça marche</h2>
-      <div class="steps">
-        <div class="step">
-          <h3>1. Connectez-vous</h3>
-          <p>Utilisez Google pour sauvegarder votre progression.</p>
+    <main class="page active" id="main-page">
+      <section class="hero">
+        <h1 class="makers-title">M.A.K.E.R.S</h1>
+        <p class="hero-lead">Monte en compétences — Management, Art, Knowledge, Expérience, Réalisation, Storybrand.</p>
+        <p class="hero-desc">Système inspiré du Pip-Boy de Fallout : 6 domaines, 10 niveaux chacun. Débloque les vidéos, réalise les exercices et accumule ton expérience.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="makers.html">Voir mes domaines</a>
+          <a class="btn btn-outline" href="howto.html">Comment ça marche</a>
         </div>
-        <div class="step">
-          <h3>2. Ajoutez des domaines</h3>
-          <p>Chaque lettre du M.A.K.E.R.S. représente un domaine.</p>
-        </div>
-        <div class="step">
-          <h3>3. Créez des quêtes</h3>
-          <p>Gagnez de l'XP et montez de niveau.</p>
-        </div>
-        <div class="step">
-          <h3>4. Suivez votre progression</h3>
-          <p>Jauges et niveaux s'actualisent en temps réel.</p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="tab-content" style="display:none;">
-      <h2>À propos</h2>
-      <p>Créé par Benoît, inspiré de Fallout SPECIAL.</p>
-    </section>
-  </main>
+      <section class="overview">
+        <h2>Ta progression rapide</h2>
+        <div id="global-progress" class="grid-cards"></div>
+      </section>
 
-  <script type="module" src="app.js"></script>
+      <section class="how-overview">
+        <h2>Pourquoi MAKERS ?</h2>
+        <p>MAKERS te permet d'apprendre par la pratique : vidéos courtes, exercices et validation de niveau. Chaque lettre correspond à une compétence à développer.</p>
+        <ul>
+          <li><b>M</b> Management & communication</li>
+          <li><b>A</b> Art & créativité</li>
+          <li><b>K</b> Knowledge (savoirs)</li>
+          <li><b>E</b> Expérience utilisateur & design</li>
+          <li><b>R</b> Réalisation & technique</li>
+          <li><b>S</b> Storybrand & marketing</li>
+        </ul>
+      </section>
+    </main>
+
+    <div id="error-box" class="error-box" aria-live="polite"></div>
+
+  </div>
+
+  <script src="app.js" defer></script>
 </body>
 </html>
+
+
+
+
+
